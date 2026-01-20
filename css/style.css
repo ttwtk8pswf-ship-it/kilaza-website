@@ -90,8 +90,9 @@ a:hover{text-decoration:underline}
   padding:2px 7px; font-weight:800; border:2px solid #ffffff; box-shadow:0 2px 8px rgba(6,182,212,.3)
 }
 
-.hero{padding:44px 0 10px}
-.hero__inner{display:grid; grid-template-columns: 1.25fr .85fr; gap:24px; align-items:stretch}
+.hero{padding:44px 0 10px; position:relative; overflow:hidden}
+.hero::before{content:""; position:absolute; inset:0; background:url('../images/clean-water.jpg') center/cover no-repeat; opacity:0.08; z-index:-1}
+.hero__inner{display:grid; grid-template-columns: 1.25fr .85fr; gap:24px; align-items:stretch; position:relative; z-index:1}
 .hero__copy{padding:22px 0}
 .hero h1{font-size:44px; line-height:1.05; margin:0 0 12px}
 .hero p{margin:0 0 18px; color:var(--muted); font-size:16px; line-height:1.6}
@@ -139,6 +140,7 @@ a:hover{text-decoration:underline}
 
 .card{border:1px solid var(--stroke); background:rgba(255,255,255,.85); border-radius:var(--radius); padding:16px; box-shadow: 0 8px 24px rgba(14,165,233,.08); backdrop-filter:blur(8px)}
 .card__icon{font-size:20px; color:var(--primary); margin-bottom:10px}
+.card__image{width:100%; height:180px; object-fit:cover; border-radius:var(--radius-sm); margin-bottom:12px}
 .card h3{margin:0 0 8px; font-size:18px}
 .card p{margin:0; color:var(--muted); line-height:1.6}
 
