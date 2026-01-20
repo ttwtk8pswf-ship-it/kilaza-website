@@ -62,9 +62,9 @@ a:hover{text-decoration:underline}
 }
 
 .brand__logo-img{
-  height:42px;
+  height:56px;
   width:auto;
-  max-width:220px;
+  max-width:280px;
   object-fit:contain;
   border-radius:12px;
 }
