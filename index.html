@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kilaza — Fornecimento de produtos químicos para tratamento de água potável em Angola. Representação exclusiva de SUDFLOC (AECI Water, África do Sul). Hipoclorito de cálcio, coagulantes, floculantes e serviços de monitorização.">
-  <title>Kilaza — Tratamento de Água Potável | SUDFLOC Angola</title>
+  <meta name="description" content="Kilaza — Comércio e Transporte, Lda. Produtos químicos para tratamento de água potável em Angola. Representante exclusivo Sudfloc (AECI Water, África do Sul)." />
+  <title>Kilaza | Tratamento de Água Potável em Angola</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,194 +12,209 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+  <a href="#conteudo" class="skip-link">Saltar para o conteúdo principal</a>
 
   <div class="topbar">
-    <div class="container">
-      <div class="topbar__inner">
-        <div class="topbar__left">
-          <span class="topbar__meta"><i class="fa-regular fa-envelope"></i> Bin.kilaza@gmail.com</span>
-        </div>
-        <div class="topbar__right">
-          <a class="topbar__link" href="#contato"><i class="fa-solid fa-phone"></i> +244 938 749 898 (Muinhe) • +244 923 430 189 (Paulo)</a>
-        </div>
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="topbar__meta"><i class="fa-regular fa-envelope"></i> Bin.kilaza@gmail.com</span>
+      </div>
+      <div class="topbar__right">
+        <a class="topbar__link" href="#contato"><i class="fa-solid fa-phone"></i> +244 938 749 898 (Muinhe) • +244 923 430 189 (Paulo)</a>
       </div>
     </div>
   </div>
-
-  <header class="site-header">
-    <nav class="navbar" role="navigation" aria-label="Navegação principal">
-      <div class="container">
-        <div class="navbar__inner">
-          <a href="index.html" class="brand">
-            <img src="images/logo-kilaza.png" alt="Kilaza Comércio e Transporte" class="brand__logo-img">
-          </a>
-          <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <div class="nav">
-            <a href="#sobre">Sobre</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#servicos">Serviços</a>
-            
-            <a href="#contato">Contato</a>
-            <a href="loja.html" class="nav__cta">Loja</a>
-            <a href="carrinho.html" class="nav__icon" aria-label="Carrinho de compras">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span class="cart-badge" id="cartBadge">0</span>
-            </a>
+  <header class="site-header" role="banner">
+    <div class="navbar">
+      <div class="container navbar__inner">
+        <a class="brand" href="index.html" aria-label="Página inicial">
+          <img class="brand__logo-img" src="images/logo-kilaza.png" alt="Logotipo da Kilaza" />
+          <div class="brand__text">
+            <strong>Kilaza</strong>
+            <span>Comércio e Transporte, Lda</span>
           </div>
-        </div>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="nav" id="navMenu" aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+          <a class="nav__cta" href="loja.html"><i class="fa-solid fa-bag-shopping"></i> Loja</a>
+          <a class="nav__icon" href="carrinho.html" aria-label="Ver carrinho">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" id="cartBadge" aria-label="Itens no carrinho">0</span>
+          </a>
+        </nav>
       </div>
-    </nav>
+    </div>
   </header>
-
-  <main id="main">
+  <main id="conteudo">
     <section class="hero">
-      <div class="container">
-        <div class="hero__inner">
-          <div class="hero__copy">
-            <h1>Produtos Químicos para <span class="text-grad">Tratamento de Água Potável</span></h1>
-            <p>A Kilaza fornece soluções completas para tratamento de água: <strong>SUDFLOC (coagulante/floculante)</strong>, <strong>hipoclorito de cálcio</strong> (cloro granulado e tabletes) e <strong>cal</strong> (ajuste de pH). Representação exclusiva de SUDFLOC da AECI Water (África do Sul) em Angola.</p>
-            <div class="hero__actions">
-              <a href="loja.html" class="btn btn--primary">
-                <i class="fa-solid fa-flask"></i> Ver catálogo
-              </a>
-              <a href="#contato" class="btn btn--ghost">
-                <i class="fa-regular fa-comments"></i> Pedir proposta
-              </a>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <h1>Produtos químicos e suporte técnico para <span class="text-grad">tratamento de água</span></h1>
+          <p>
+            Fornecemos químicos para água potável (Sudfloc, cloro, cal e outros) e acompanhamos a aplicação no terreno,
+            com foco em qualidade, segurança e resultados.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="loja.html"><i class="fa-solid fa-bag-shopping"></i> Ver catálogo</a>
+            <a class="btn btn--ghost" href="#contato"><i class="fa-regular fa-paper-plane"></i> Pedir proposta</a>
+          </div>
+          <div class="hero__stats" role="list">
+            <div class="stat" role="listitem">
+              <strong>Sudfloc</strong>
+              <span>Representação exclusiva</span>
             </div>
-            <div class="hero__stats">
-              <div class="stat">
-                <strong>Representação Exclusiva</strong>
-                <span>SUDFLOC em Angola</span>
-              </div>
-              <div class="stat">
-                <strong>Monitorização</strong>
-                <span>Aplicação dos produtos</span>
-              </div>
-              <div class="stat">
-                <strong>Continuidade</strong>
-                <span>Abastecimento garantido</span>
-              </div>
+            <div class="stat" role="listitem">
+              <strong>Monitorização</strong>
+              <span>Acompanhamento técnico</span>
+            </div>
+            <div class="stat" role="listitem">
+              <strong>Abastecimento</strong>
+              <span>Foco em continuidade</span>
             </div>
           </div>
-          <div class="hero__card">
-            <div class="glass">
-              <h2 class="h4">Sudfloc em Angola</h2>
-              <p>Kilaza é o representante <strong>exclusivo</strong> da linha SUDFLOC (AECI Water, África do Sul) para o mercado angolano de tratamento de água potável, águas residuais e processos industriais.</p>
-              <a href="#sudfloc" class="link">
-                Saber mais <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            <div class="hero__wave" aria-hidden="true"></div>
-          </div>
         </div>
-      </div>
-    </section>
-    <section id="sobre" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Quem Somos</h2>
-          <p>A Kilaza — Comércio e Transporte, Lda atua no fornecimento de produtos químicos para tratamento de água em Angola, com foco em soluções técnicas para água potável, processos industriais e águas residuais.</p>
-        </div>
-        <div class="card">
-            <div class="card__icon"><i class="fa-solid fa-flask-vial"></i></div>
-            <h3>Produtos para Água Potável</h3>
-            <p>Fornecimento de <strong>hipoclorito de cálcio</strong> (desinfecção), <strong>SUDFLOC</strong> (coagulação/floculação) e <strong>cal</strong> (correção de pH e alcalinidade).</p>
-          </div>
-          <div class="card">
-            <div class="card__icon"><i class="fa-solid fa-clipboard-check"></i></div>
-            <h3>Suporte Técnico</h3>
-            <p>Monitorização da aplicação dos produtos, orientação de dosagem, boas práticas de armazenamento e acompanhamento contínuo para otimização do tratamento.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="produtos" class="section section--soft">
+        <div class="hero__card">
+          <div class="glass">
+            <h2 class="h4">Sudfloc em Angola</h2>
+            <p>
+              A Kilaza é representante exclusiva do <strong>Sudfloc</strong>, fornecido pela <strong>AECI Water</strong> (África do Sul),
+              para o mercado angolano de tratamento de água potável, águas industriais e águas residuais.
+            </p>
+            <a class="link" href="#sudfloc">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="hero__wave" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+## 📋 **INDEX.HTML COMPLETO - PARTE 4 de 10**
+
+**Continue colando:**
+
+```html
+    <section class="section" id="sobre">
       <div class="container">
         <div class="section__head">
-          <h2>Produtos em Destaque</h2>
-          <p>Soluções químicas testadas para clarificação, desinfecção e ajuste de parâmetros físico-químicos da água.</p>
+          <h2>Quem somos</h2>
+          <p>Comércio, fornecimento e suporte técnico para tratamento de água potável, com atuação em Angola.</p>
         </div>
+
         <div class="grid grid--3">
-          <div class="card">
-            <span class="pill"><i class="fa-solid fa-certificate"></i> Exclusivo</span>
-            <h3>SUDFLOC (polímero catiônico)</h3>
-            <p>Polímero catiônico (floculante) para clarificação e remoção de sólidos em água potável e processos industriais. Representação exclusiva da AECI Water (África do Sul).</p>
-            <a href="produto.html?slug=sudfloc" class="btn btn--primary" style="margin-top:auto">
-              Ver detalhes <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-          <div class="card">
-            <span class="pill"><i class="fa-solid fa-droplet"></i> Desinfetante</span>
-            <h3>Hipoclorito de cálcio (granulado)</h3>
-            <p>Desinfetante sólido para cloração de água potável (calcium hypochlorite). Contribui para inativação microbiológica e manutenção de residual de cloro.</p>
-            <a href="produto.html?slug=hipoclorito-de-calcio-granulado" class="btn btn--primary" style="margin-top:auto">
-              Ver detalhes <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-          <div class="card">
-            <span class="pill"><i class="fa-solid fa-droplet"></i> Desinfetante</span>
-            <h3>Hipoclorito de cálcio (tabletes)</h3>
-            <p>Desinfetante sólido para cloração de água potável em formato de tabletes/pastilhas, permitindo dosagem controlada e dissolução gradual.</p>
-            <a href="produto.html?slug=hipoclorito-de-calcio-tabletes" class="btn btn--primary" style="margin-top:auto">
-              Ver detalhes <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+          <article class="card">
+            <img src="images/water-treatment.jpg" alt="Estação de tratamento de água" class="card__image">
+            <h3>Parcerias e exclusividade</h3>
+            <p>Representação exclusiva do Sudfloc (AECI Water — África do Sul) para o mercado angolano.</p>
+          </article>
+          <article class="card">
+            <img src="images/chlorine-product.jpg" alt="Produtos químicos para tratamento de água" class="card__image">
+            <h3>Produtos para água potável</h3>
+            <p>Sudfloc, cloro granulado e pastilhas, cal e outros químicos conforme a necessidade do processo.</p>
+          </article>
+          <article class="card">
+            <img src="images/laboratory.jpg" alt="Testes de laboratório para análise de qualidade da água" class="card__image">
+            <h3>Testes de laboratório</h3>
+            <p>Realizamos testes de qualidade da água para indicar o tipo de Sudfloc ideal e otimizar a dosagem dos produtos.</p>
+          </article>
         </div>
+      </div>
+    </section>
+        <section class="section section--soft" id="produtos">
+      <div class="container">
+        <div class="section__head">
+          <h2>Produtos em destaque</h2>
+          <p>Catálogo inicial (exemplo). Os preços podem ser configurados posteriormente.</p>
+        </div>
+
+        <div class="grid grid--4" id="featuredProducts" aria-live="polite"></div>
+
         <div class="section__foot">
-          <a href="loja.html" class="btn btn--primary">
-            <i class="fa-solid fa-store"></i> Ver catálogo completo
-          </a>
+          <a class="btn btn--primary" href="loja.html">Ver todos os produtos</a>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="section">
+    <section class="section" id="servicos">
       <div class="container">
         <div class="section__head">
           <h2>Serviços</h2>
-          <p>Acompanhamento técnico para garantir a eficácia do tratamento de água.</p>
+          <p>Além do fornecimento, ajudamos a sua operação a manter qualidade e desempenho do sistema.</p>
         </div>
-        <div class="badge-panel">
-              <div class="badge-panel__icon"><i class="fa-solid fa-clipboard-check"></i></div>
-              <span class="badge-panel__text">Suporte<br>Técnico</span>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon" style="background: linear-gradient(135deg, #0ea5e9, #38bdf8); color: #fff; width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 14px;">
+              <i class="fa-solid fa-flask"></i>
             </div>
-          </div>
-          <div class="card">
-            <h3>Fornecimento Contínuo</h3>
-            <p>Garantimos continuidade de abastecimento dos produtos para o seu sistema de tratamento de água:</p>
-            <div class="steps">
-              <div class="step"><span>1</span> Envie a estimativa de consumo mensal</div>
-              <div class="step"><span>2</span> Receba proposta com prazos de entrega</div>
-              <div class="step"><span>3</span> Programação de entregas regulares</div>
-              <div class="step"><span>4</span> Acompanhamento e ajustes conforme necessário</div>
+            <h3>Testes de laboratório</h3>
+            <p>Análise da qualidade da água para indicar o tipo de Sudfloc ideal e otimizar dosagens conforme as características da água bruta.</p>
+            <ul class="checklist" style="margin-top: 12px;">
+              <li><i class="fa-solid fa-check"></i> Análise de água bruta</li>
+              <li><i class="fa-solid fa-check"></i> Indicação do Sudfloc correto</li>
+              <li><i class="fa-solid fa-check"></i> Otimização de dosagem</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card__icon" style="background: linear-gradient(135deg, #0ea5e9, #38bdf8); color: #fff; width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 14px;">
+              <i class="fa-solid fa-clipboard-check"></i>
             </div>
-          </div>
+            <h3>Monitorização e acompanhamento</h3>
+            <p>Acompanhamento na aplicação dos produtos comercializados, com orientação sobre dosagem, rotina de operação, controlo de parâmetros e boas práticas.</p>
+            <ul class="checklist" style="margin-top: 12px;">
+              <li><i class="fa-solid fa-check"></i> Visitas técnicas planeadas</li>
+              <li><i class="fa-solid fa-check"></i> Ajustes de dosagem</li>
+              <li><i class="fa-solid fa-check"></i> Recomendações de otimização</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" style="background: linear-gradient(135deg, #0ea5e9, #38bdf8); color: #fff; width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 14px;">
+              <i class="fa-solid fa-truck"></i>
+            </div>
+            <h3>Fornecimento e logística</h3>
+            <p>Planeamento de fornecimento para evitar rupturas, com foco em continuidade e segurança do abastecimento.</p>
+            <ul class="checklist" style="margin-top: 12px;">
+              <li><i class="fa-solid fa-check"></i> Planeamento de reposição</li>
+              <li><i class="fa-solid fa-check"></i> Boas práticas de armazenamento</li>
+              <li><i class="fa-solid fa-check"></i> Suporte para especificação</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
-    <section id="sudfloc" class="section section--soft">
+    <section class="section section--soft" id="sudfloc">
       <div class="container">
         <div class="section__head">
           <h2>SUDFLOC — Representação Exclusiva</h2>
           <p>A Kilaza é o representante exclusivo da linha SUDFLOC (AECI Water, África do Sul) em Angola.</p>
         </div>
+
         <div class="grid grid--2">
-          <div class="card">
+          <article class="card">
             <h3>Sobre o SUDFLOC</h3>
-            <p><strong>SUDFLOC</strong> é um polímero catiônico (floculante) desenvolvido pela <strong>AECI Water</strong> (África do Sul), utilizado em processos de tratamento de água potável, águas residuais e aplicações industriais.</p>
-            <p>A sua função principal é promover a <strong>agregação de partículas</strong>, formação de flocos e melhora da <strong>clarificação</strong> e remoção de sólidos em suspensão.</p>
+            <p>
+              <strong>SUDFLOC</strong> é um polímero catiônico (floculante) desenvolvido pela <strong>AECI Water</strong> (África do Sul),
+              utilizado em processos de tratamento de água potável, águas residuais e aplicações industriais.
+            </p>
+            <p>
+              A sua função principal é promover a <strong>agregação de partículas</strong>, formação de flocos e melhora da
+              <strong>clarificação</strong> e remoção de sólidos em suspensão.
+            </p>
             <h4 style="margin-top:18px">Aplicações:</h4>
             <ul class="checklist">
               <li><i class="fa-solid fa-check"></i> <strong>Água potável:</strong> Coagulante primário ou auxiliar em estações de tratamento</li>
               <li><i class="fa-solid fa-check"></i> <strong>Águas industriais:</strong> Clarificação de água para processos industriais</li>
               <li><i class="fa-solid fa-check"></i> <strong>Águas residuais:</strong> Remoção de sólidos em sistemas de tratamento de efluentes</li>
             </ul>
-          </div>
-          <div class="card">
+          </article>
+          <article class="card">
             <h3>Exclusividade em Angola</h3>
             <p>A <strong>Kilaza</strong> detém a <strong>representação exclusiva</strong> da linha SUDFLOC em Angola, garantindo:</p>
             <ul class="checklist">
@@ -215,12 +230,11 @@
                 <i class="fa-solid fa-file-pdf"></i> Ficha técnica (exemplo) SUDFLOC 475 (PDF)
               </a>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
-
-    <section id="contato" class="section">
+    <section class="section" id="contato">
       <div class="container">
         <div class="section__head">
           <h2>Contato</h2>
@@ -273,12 +287,10 @@
           <aside class="card">
             <h3>Informações</h3>
             
-            <!-- Localização -->
             <ul class="info-list">
               <li><i class="fa-solid fa-location-dot"></i> Bairro Camama, Jardim do Éden, Rua das Margaridas, Casa nº 31 — Luanda, Angola</li>
             </ul>
 
-            <!-- Contatos Muinhe -->
             <h4 style="margin-top: 20px; margin-bottom: 10px; font-size: 16px;">📞 Muinhe Bin Mufahaia</h4>
             <ul class="info-list" style="margin-top: 0;">
               <li><i class="fa-regular fa-envelope"></i> <a href="mailto:Bin.kilaza@gmail.com">Bin.kilaza@gmail.com</a></li>
@@ -286,7 +298,6 @@
               <li><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/244938749898" target="_blank" rel="noopener">WhatsApp: +244 938 749 898</a></li>
             </ul>
 
-            <!-- Contatos Paulo -->
             <h4 style="margin-top: 20px; margin-bottom: 10px; font-size: 16px;">📞 Paulo Medeiros</h4>
             <ul class="info-list" style="margin-top: 0;">
               <li><i class="fa-regular fa-envelope"></i> <a href="mailto:medeiros.kilaza@gmail.com">medeiros.kilaza@gmail.com</a></li>
@@ -304,56 +315,50 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <img src="images/logo-kilaza.png" alt="Kilaza" class="brand__logo-img brand__logo-img--footer">
-          <div>
-            <strong style="display:block; font-size:14px">Kilaza — Comércio e Transporte, Lda</strong>
-            <small style="display:block; margin-top:4px; color:var(--muted)">Tratamento de Água | Angola</small>
-          </div>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img class="brand__logo-img brand__logo-img--footer" src="images/logo-kilaza.png" alt="Logotipo da Kilaza" />
+        <div>
+          <strong>Kilaza — Comércio e Transporte, Lda</strong>
+          <p class="muted">Produtos químicos para tratamento de água potável • Representação Sudfloc (AECI Water)</p>
         </div>
-        <nav class="footer__links" aria-label="Links do rodapé">
-          <a href="#sobre">Sobre</a>
-          <a href="#produtos">Produtos</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#sudfloc">Sudfloc</a>
-          <a href="#contato">Contato</a>
-          <a href="loja.html">Loja</a>
-        </nav>
       </div>
-      <div class="footer__copy" style="margin-top:18px; text-align:center">
-        <small>&copy; 2025 Kilaza — Comércio e Transporte, Lda. Todos os direitos reservados.</small>
+
+      <div class="footer__links">
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="loja.html">Loja</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <div class="footer__copy">
+        <small>© <span id="year"></span> Kilaza. Todos os direitos reservados.</small>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/244938749898?text=Olá!%20Gostaria%20de%20solicitar%20uma%20cotação." 
-     class="float-whats" 
-     target="_blank" 
-     rel="noopener"
-     aria-label="Abrir WhatsApp">
-    <i class="fa-brands fa-whatsapp" style="font-size:26px"></i>
+  <a class="float-whats" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <script src="js/app.js"></script>
   <script>
-    // Toggle mobile nav
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    if(navToggle && nav){
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if(navToggle && navMenu){
       navToggle.addEventListener('click', ()=>{
-        const isOpen = nav.classList.toggle('is-open');
+        const isOpen = navMenu.classList.toggle('is-open');
         navToggle.setAttribute('aria-expanded', isOpen);
       });
     }
 
-    // Update cart badge
     window.addEventListener('DOMContentLoaded', ()=>{
       updateCartBadges();
+      const yearSpan = document.getElementById('year');
+      if(yearSpan) yearSpan.textContent = new Date().getFullYear();
     });
 
-    // Contact form handler
     const contactForm = document.getElementById('contactForm');
     const contactStatus = document.getElementById('contactStatus');
     const whatsCta = document.getElementById('whatsCta');
@@ -368,12 +373,7 @@
         const assunto = formData.get('assunto');
         const mensagem = formData.get('mensagem');
 
-        const whatsappMsg = `Olá! Meu nome é ${nome}.\n\n` +
-          `*Assunto:* ${assunto}\n` +
-          `*E-mail:* ${email}\n` +
-          `*Telefone:* ${telefone}\n\n` +
-          `*Mensagem:*\n${mensagem}`;
-
+        const whatsappMsg = `Olá! Meu nome é ${nome}.\n\n*Assunto:* ${assunto}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n\n*Mensagem:*\n${mensagem}`;
         const whatsappUrl = `https://wa.me/${SETTINGS.whatsappNumber}?text=${encodeURIComponent(whatsappMsg)}`;
         
         contactStatus.textContent = 'Redirecionando para WhatsApp...';
@@ -394,6 +394,11 @@
         const url = `https://wa.me/${SETTINGS.whatsappNumber}?text=${encodeURIComponent(msg)}`;
         window.open(url, '_blank');
       });
+    }
+
+    const floatWhats = document.getElementById('floatWhats');
+    if(floatWhats){
+      floatWhats.href = `https://wa.me/${SETTINGS.whatsappNumber}?text=${encodeURIComponent(SETTINGS.whatsappDefaultMessage || 'Olá! Gostaria de solicitar uma cotação.')}`;
     }
   </script>
 </body>
