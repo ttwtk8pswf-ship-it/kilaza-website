@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrinho | Kilaza</title>
+  <meta name="description" content="Carrinho de compras (demonstrativo) — Kilaza." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="navbar navbar--simple">
+      <div class="container navbar__inner">
+        <a class="brand" href="index.html" aria-label="Página inicial">
+          <img class="brand__logo-img" src="images/logo-kilaza.png" alt="Logotipo da Kilaza" />
+          <div class="brand__text">
+            <strong>Kilaza</strong>
+            <span>Comércio e Transporte, Lda</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="loja.html">Continuar comprando</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section__head">
+        <h1 class="h2">Carrinho</h1>
+        <p>Checkout é um placeholder. Nesta versão estática, o pedido é enviado via WhatsApp.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <section class="card">
+          <h2 class="h4">Itens</h2>
+          <div id="cartItems" class="cart" aria-live="polite"></div>
+          <div class="cart__actions">
+            <button class="btn btn--ghost" id="clearCart"><i class="fa-solid fa-trash"></i> Limpar</button>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2 class="h4">Resumo</h2>
+          <div class="summary">
+            <div class="summary__row"><span>Itens</span><strong id="summaryCount">0</strong></div>
+            <div class="summary__row"><span>Total</span><strong id="summaryTotal">Sob consulta</strong></div>
+          </div>
+
+          <div class="form" style="margin-top: 14px;">
+            <label>Seu nome
+              <input id="buyerName" placeholder="Nome" />
+            </label>
+            <label>Empresa (opcional)
+              <input id="buyerCompany" placeholder="Empresa" />
+            </label>
+            <label>Local de entrega (opcional)
+              <input id="buyerCity" placeholder="Cidade / Província" />
+            </label>
+          </div>
+
+          <div class="stack" style="margin-top: 14px;">
+            <a class="btn btn--primary" id="checkoutBtn" href="checkout.html"><i class="fa-solid fa-credit-card"></i> Ir para checkout</a>
+            <a class="btn btn--whatsapp" id="whatsOrder" target="_blank" rel="noopener" href="#">
+              <i class="fa-brands fa-whatsapp"></i> Enviar pedido no WhatsApp
+            </a>
+            <p class="muted" style="margin: 0;">Dica: inclua quantidade/tonelagem e prazo.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__copy">
+        <small>© <span id="year"></span> Kilaza.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

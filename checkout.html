@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout (Placeholder) | Kilaza</title>
+  <meta name="description" content="Checkout demonstrativo — Kilaza." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="navbar navbar--simple">
+      <div class="container navbar__inner">
+        <a class="brand" href="index.html" aria-label="Página inicial">
+          <img class="brand__logo-img" src="images/logo-kilaza.png" alt="Logotipo da Kilaza" />
+          <div class="brand__text">
+            <strong>Kilaza</strong>
+            <span>Comércio e Transporte, Lda</span>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="carrinho.html">Voltar ao carrinho</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section__head">
+        <h1 class="h2">Checkout (demonstrativo)</h1>
+        <p>
+          Este projeto é um site estático. Para pagamento online e gestão de pedidos é necessário integrar uma plataforma de e-commerce
+          (ex.: Shopify/WooCommerce) ou um backend.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <section class="card">
+          <h2 class="h4">Dados para faturação/entrega</h2>
+          <form class="form" id="checkoutForm">
+            <div class="form__row">
+              <label>Nome
+                <input required name="nome" placeholder="Seu nome" />
+              </label>
+              <label>Telefone
+                <input name="telefone" placeholder="+244 ..." />
+              </label>
+            </div>
+            <label>E-mail
+              <input type="email" required name="email" placeholder="voce@empresa.com" />
+            </label>
+            <label>Morada/Local
+              <input name="morada" placeholder="Cidade / Província" />
+            </label>
+
+            <button class="btn btn--primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Simular pedido</button>
+            <p class="form__note" id="checkoutStatus" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="card">
+          <h2 class="h4">Resumo do carrinho</h2>
+          <div id="checkoutCart" class="cart cart--compact" aria-live="polite"></div>
+          <div class="stack" style="margin-top: 14px;">
+            <a class="btn btn--whatsapp" id="checkoutWhats" target="_blank" rel="noopener" href="#">
+              <i class="fa-brands fa-whatsapp"></i> Enviar pedido no WhatsApp
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__copy">
+        <small>© <span id="year"></span> Kilaza.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
