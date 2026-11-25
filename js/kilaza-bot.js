@@ -71,6 +71,8 @@
   var style = document.createElement("style");
   style.textContent = css;
   document.head.appendChild(style);
+var fw = document.getElementById("floatWhats");
+if (fw) fw.style.display = "none";
 
   var btn = document.createElement("button");
   btn.className = "kbz-btn";
