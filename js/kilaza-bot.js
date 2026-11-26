@@ -51,10 +51,9 @@
     + '<path d="M51 26.5 L55 26.5 L54.4 31 L51.6 31 Z" fill="#38bdf8"/>'
     + '<rect x="29.5" y="34" width="5" height="4" rx="2" fill="#fcd7b0"/>'
     + '<circle cx="32" cy="24" r="12" fill="#fcd7b0"/>'
-    + '<path d="M19.5 14 Q19.5 6 32 6 Q44.5 6 44.5 14 Z" fill="#334155"/>'
-    + '<rect x="19" y="12.5" width="26" height="4.5" rx="2.2" fill="#1e293b"/>'
-    + '<path d="M19 16 Q32 21.5 45 16 Q32 19 19 16 Z" fill="#0f172a"/>'
-    + '<circle cx="32" cy="14.7" r="1.6" fill="#f59e0b"/>'
+    + '<path d="M17 13 Q21 3 32 3 Q42 3 45 9 L45 13 Z" fill="#dc2626"/>'
+    + '<circle cx="44.5" cy="8" r="2.8" fill="#fff"/>'
+    + '<rect x="15.5" y="11" width="33" height="5" rx="2.5" fill="#fff" stroke="#cbd5e1" stroke-width=".6"/>'
     + '<circle cx="27.5" cy="24" r="1.6" fill="#0c4a6e"/>'
     + '<circle cx="36.5" cy="24" r="1.6" fill="#0c4a6e"/>'
     + '<path d="M28.5 29 Q32 32 35.5 29" stroke="#a1611f" stroke-width="1.8" fill="none" stroke-linecap="round"/>'
@@ -216,4 +215,38 @@
 
   btn.onclick = function(){ OPEN ? closePanel() : openPanel(); };
   panel.querySelector(".kbz-close").onclick = closePanel;
+})();
+
+/* 🎄 Decoração natalícia (provisória) — neve só cai de 20/dez a 6/jan; depois desaparece sozinha */
+(function(){
+  var hoje = new Date(), m = hoje.getMonth(), d = hoje.getDate();
+  var epoca = (m === 11 && d >= 20) || (m === 0 && d <= 6);
+  if (!epoca) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var c = document.createElement("canvas");
+  c.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99989";
+  document.body.appendChild(c);
+  var ctx = c.getContext("2d"), flocos = [];
+  function medir(){ c.width = innerWidth; c.height = innerHeight; }
+  medir();
+  addEventListener("resize", medir);
+  for (var i = 0; i < 60; i++){
+    flocos.push({ x: Math.random()*innerWidth, y: Math.random()*innerHeight,
+      r: 1.2 + Math.random()*2.3, v: .4 + Math.random()*1.1, d: Math.random()*2 - 1 });
+  }
+  (function nevar(){
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "rgba(255,255,255,.9)";
+    ctx.strokeStyle = "rgba(110,165,210,.5)";
+    ctx.lineWidth = .5;
+    for (var i = 0; i < flocos.length; i++){
+      var f = flocos[i];
+      ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.283); ctx.fill(); ctx.stroke();
+      f.y += f.v; f.x += f.d;
+      if (f.y > c.height + 4){ f.y = -4; f.x = Math.random()*c.width; }
+      if (f.x < -4) f.x = c.width + 4;
+      if (f.x > c.width + 4) f.x = -4;
+    }
+    requestAnimationFrame(nevar);
+  })();
 })();
