@@ -73,7 +73,7 @@
     + ".kbz-bubble svg{width:30px;height:30px;flex:none;display:block}"
     + "@keyframes kbzFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}"
     + ".kbz-panel{position:fixed;bottom:104px;right:22px;z-index:99991;width:360px;max-width:calc(100vw - 32px);"
-    + "height:520px;max-height:calc(100vh - 130px);background:#fff;border-radius:16px;overflow:hidden;display:none;"
+    + "height:auto;min-height:380px;max-height:calc(100vh - 130px);background:#fff;border-radius:16px;overflow:hidden;display:none;"
     + "flex-direction:column;box-shadow:0 12px 40px rgba(2,32,71,.25);font-family:Inter,system-ui,sans-serif}"
     + ".kbz-panel.kbz-open{display:flex}"
     + ".kbz-head{background:linear-gradient(135deg,#0ea5e9,#38bdf8);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}"
@@ -82,8 +82,8 @@
     + ".kbz-head h3{margin:0;font-size:16.5px;font-weight:800;letter-spacing:.4px}"
     + ".kbz-head p{margin:3px 0 0;font-size:10.5px;opacity:.95;letter-spacing:1.4px;text-transform:uppercase;font-weight:600}"
     + ".kbz-close{margin-left:auto;background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:.85}"
-    + ".kbz-msgs{flex:1;overflow-y:auto;padding:14px;background:#f1f7fb;display:flex;flex-direction:column;gap:10px}"
-    + ".kbz-msg{max-width:82%;padding:11px 14px;border-radius:14px;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased;color:#173a54}"
+    + ".kbz-msgs{flex:1 1 auto;min-height:0;overflow-y:auto;padding:14px;background:#f1f7fb;display:flex;flex-direction:column;gap:10px}"
+    + ".kbz-msg{max-width:82%;padding:9px 12px;border-radius:14px;font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;color:#173a54}"
     + ".kbz-msg.bot{background:#fff;border:1px solid #e2eef6;border-bottom-left-radius:4px;align-self:flex-start}"
     + ".kbz-msg.user{background:#0ea5e9;color:#fff;border-bottom-right-radius:4px;align-self:flex-end}"
     + ".kbz-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 2px;background:#f1f7fb}"
@@ -193,6 +193,7 @@
   }
 
   function handle(key, label){
+    msgs.innerHTML = "";
     addMsg(label, "user");
     reply(key, label);
   }
