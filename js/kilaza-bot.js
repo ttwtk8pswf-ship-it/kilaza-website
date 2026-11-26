@@ -222,7 +222,6 @@
   var hoje = new Date(), m = hoje.getMonth(), d = hoje.getDate();
   var epoca = (m === 11 && d >= 20) || (m === 0 && d <= 6);
   if (!epoca) return;
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var c = document.createElement("canvas");
   c.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99989";
   document.body.appendChild(c);
@@ -230,15 +229,15 @@
   function medir(){ c.width = innerWidth; c.height = innerHeight; }
   medir();
   addEventListener("resize", medir);
-  for (var i = 0; i < 60; i++){
+  for (var i = 0; i < 70; i++){
     flocos.push({ x: Math.random()*innerWidth, y: Math.random()*innerHeight,
-      r: 1.2 + Math.random()*2.3, v: .4 + Math.random()*1.1, d: Math.random()*2 - 1 });
+      r: 1.8 + Math.random()*2.4, v: .5 + Math.random()*1.2, d: Math.random()*2 - 1 });
   }
   (function nevar(){
     ctx.clearRect(0, 0, c.width, c.height);
-    ctx.fillStyle = "rgba(255,255,255,.9)";
-    ctx.strokeStyle = "rgba(110,165,210,.5)";
-    ctx.lineWidth = .5;
+    ctx.fillStyle = "rgba(255,255,255,.95)";
+    ctx.strokeStyle = "rgba(70,130,185,.9)";
+    ctx.lineWidth = 1.2;
     for (var i = 0; i < flocos.length; i++){
       var f = flocos[i];
       ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.283); ctx.fill(); ctx.stroke();
