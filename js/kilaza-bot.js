@@ -6,7 +6,7 @@
   "use strict";
 
   var SETTINGS = {
-    whatsappNumber: "244938749898",
+    whatsappNumber: "244926506236",
     whatsappDefaultMessage: "Olá! Vim pelo site da Kilaza e gostaria de solicitar uma cotação.",
     brandName: "Kilabot",
     tagline: "Assistente virtual",
