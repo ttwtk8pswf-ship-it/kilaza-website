@@ -114,7 +114,7 @@
 
   var bubble = document.createElement("div");
   bubble.className = "kbz-bubble";
-  bubble.innerHTML = '<span style="display:flex;align-items:center;gap:8px">' + MASCOTE_SVG + '<span>Em que posso ajudar?</span></span>';
+  bubble.innerHTML = '<span>Em que posso ajudar?</span>';
   document.body.appendChild(bubble);
 
   var panel = document.createElement("div");
