@@ -4,7 +4,7 @@
 
 const SETTINGS = {
   // WhatsApp principal (Muinhe Bin Mufahaia)
-  whatsappNumber: "244938749898", // com DDI, sem + e sem espaços
+  whatsappNumber: "244926506236", // com DDI, sem + e sem espaços
   whatsappDefaultMessage: "Olá! Gostaria de solicitar uma cotação." ,
 };
 
