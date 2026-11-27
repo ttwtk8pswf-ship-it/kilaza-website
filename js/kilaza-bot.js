@@ -22,7 +22,7 @@
     cotacao:
       "📝 <b>Pedir cotação</b><br>Com todo o gosto! Para preparar a melhor proposta, envie-nos:<br><b>1.</b> Nome da empresa<br><b>2.</b> NIF da empresa<br><b>3.</b> Morada da empresa<br><b>4.</b> Email da empresa<br><b>5.</b> Produto ou necessidades (ex.: Sudfloc, Hipoclorito, etc.)<br><b>6.</b> Quantidade<br><b>7.</b> Local de entrega<br><br>Toque no botão abaixo — o modelo vai já preparado para o nosso WhatsApp. 👇",
     contactos:
-      "📞 <b>Contactos</b><br><br><b>Muinhe Bin Mufahaia</b><br>📧 Bin.kilaza@gmail.com<br>📱 +244 938 749 898<br><br><b>Paulo Medeiros</b><br>📱 +244 923 430 189<br><br>📍 Bairro Camama, Jardim do Éden, Rua das Margaridas, Casa nº 31 — Luanda, Angola",
+      "📞 <b>Contactos</b><br><br>📧 <b>comercial@kilaza.com</b> — cotações e encomendas<br><br><b>Muinhe Bin Mufahaia</b><br>📧 Bin.kilaza@gmail.com<br>📱 +244 938 749 898<br><br><b>Paulo Medeiros</b><br>📱 +244 923 430 189<br><br>📍 Bairro Camama, Jardim do Éden, Rua das Margaridas, Casa nº 31 — Luanda, Angola",
     empresa:
       "ℹ️ <b>Quem somos</b><br>A <b>Kilaza — Comércio e Transporte, Lda</b> actua no comércio, fornecimento e suporte técnico para tratamento de água potável em Angola.<br><br>✔️ Representação exclusiva do Sudfloc (AECI Water — África do Sul)<br>✔️ Produtos para água potável: Sudfloc, cloro granulado e pastilhas, cal e outros<br>✔️ Testes de laboratório e acompanhamento técnico",
     entrega:
@@ -162,7 +162,7 @@
   function iniciarCotacao(){
     cot.ativo = true; cot.etapa = 0; cot.respostas = [];
     chips.style.display = "none";
-    botSay("📝 <b>Pedir cotação</b><br>Vou pedir-lhe os dados um a um (7 perguntas). Pode escrever <b>cancelar</b> a qualquer momento.<br><br><b>1/7</b> — " + CAMPOS[0] + "?", 550);
+    botSay("📝 <b>Pedir cotação</b><br>Vou pedir-lhe os dados um a um (7 perguntas). Pode escrever <b>cancelar</b> a qualquer momento.<br><br>Preferir email? 📧 <b>comercial@kilaza.com</b><br><br><b>1/7</b> — " + CAMPOS[0] + "?", 550);
   }
 
   function respostaCotacao(txt){
