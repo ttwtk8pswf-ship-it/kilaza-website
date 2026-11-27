@@ -96,6 +96,10 @@
     + ".kbz-typing span{width:7px;height:7px;border-radius:50%;background:#8ec5e6;animation:kbzBlink 1.2s infinite}"
     + ".kbz-typing span:nth-child(2){animation-delay:.2s}.kbz-typing span:nth-child(3){animation-delay:.4s}"
     + "@keyframes kbzBlink{0%,80%,100%{opacity:.3}40%{opacity:1}}"
+    + ".kbz-inputrow{display:flex;gap:6px;padding:2px 14px 4px;background:#f1f7fb}"
+    + ".kbz-inputrow input{flex:1;min-width:0;border:1.5px solid #bae6fd;border-radius:999px;padding:9px 14px;font-size:13.5px;font-family:inherit;outline:none;background:#fff;color:#173a54}"
+    + ".kbz-inputrow input:focus{border-color:#0ea5e9}"
+    + ".kbz-inputrow button{width:38px;height:38px;border-radius:50%;border:none;background:#0ea5e9;color:#fff;font-size:15px;cursor:pointer;flex:none}"
     + "@media(max-width:480px){.kbz-panel{width:calc(100vw - 24px);right:12px;bottom:100px;height:70vh}.kbz-bubble{right:14px}}";
 
   var style = document.createElement("style");
@@ -131,6 +135,79 @@
 
   var msgs  = panel.querySelector("#kbz-msgs");
   var chips = panel.querySelector("#kbz-chips");
+  var foot  = panel.querySelector("#kbz-foot");
+
+  var CAMPOS = ["Nome da empresa", "NIF da empresa", "Morada da empresa", "Email da empresa",
+                "Produto ou necessidades (ex.: Sudfloc, Hipoclorito, etc.)", "Quantidade", "Local de entrega"];
+  var cot = { ativo: false, etapa: 0, respostas: [] };
+
+  foot.innerHTML =
+      '<div class="kbz-inputrow">'
+    +   '<input id="kbz-txt" type="text" placeholder="Escreva a sua pergunta…" autocomplete="off">'
+    +   '<button id="kbz-send" aria-label="Enviar">➤</button>'
+    + '</div>';
+  var input = foot.querySelector("#kbz-txt");
+  var send  = foot.querySelector("#kbz-send");
+
+  function enviarTexto(){
+    var txt = input.value.trim();
+    if (!txt) return;
+    input.value = "";
+    addMsg(txt, "user");
+    texto(txt);
+  }
+  send.onclick = enviarTexto;
+  input.addEventListener("keydown", function(e){ if (e.key === "Enter") enviarTexto(); });
+
+  function iniciarCotacao(){
+    cot.ativo = true; cot.etapa = 0; cot.respostas = [];
+    chips.style.display = "none";
+    botSay("📝 <b>Pedir cotação</b><br>Vou pedir-lhe os dados um a um (7 perguntas). Pode escrever <b>cancelar</b> a qualquer momento.<br><br><b>1/7</b> — " + CAMPOS[0] + "?", 550);
+  }
+
+  function respostaCotacao(txt){
+    if (/cancel/i.test(txt)){
+      cot.ativo = false;
+      chips.style.display = "";
+      botSay("Tudo bem, cotação cancelada. 😊 Toque num tópico abaixo ou escreva a sua pergunta.", 400);
+      return;
+    }
+    cot.respostas.push(txt);
+    cot.etapa++;
+    if (cot.etapa < CAMPOS.length){
+      botSay("<b>" + (cot.etapa + 1) + "/7</b> — " + CAMPOS[cot.etapa] + "?", 450);
+      return;
+    }
+    cot.ativo = false;
+    chips.style.display = "";
+    var msg = "Olá! Gostaria de solicitar uma cotação.\n\n";
+    for (var i = 0; i < CAMPOS.length; i++){
+      msg += (i + 1) + ". " + CAMPOS[i] + ": " + cot.respostas[i] + "\n";
+    }
+    var resumo = cot.respostas.map(function(r, i){
+      return "<b>" + (i + 1) + ".</b> " + CAMPOS[i].split(" (")[0] + ": " + r;
+    }).join("<br>");
+    botSay("Perfeito, obrigado! ✅<br><br>" + resumo + "<br><br>Toque no botão abaixo para enviar ao nosso WhatsApp. 👇", 550);
+    setTimeout(function(){
+      var d = addMsg(
+          '<a class="kbz-chip kbz-wa" style="text-decoration:none;display:inline-block" target="_blank" rel="noopener" href="'
+        + waLink(msg)
+        + '">🟢 Abrir WhatsApp com o pedido pronto</a>', "bot");
+      d.style.maxWidth = "95%";
+    }, 800);
+  }
+
+  function texto(txt){
+    var t = txt.toLowerCase();
+    if (cot.ativo){ respostaCotacao(txt); return; }
+    if (/^(ola|olá|oi|bom dia|boa tarde|boa noite)\b/.test(t)){ botSay(M.boasVindas, 450); return; }
+    if (/produto|sudfloc|hipoclorito|cal\b|quimic/.test(t)){ botSay(M.produtos, 500); return; }
+    if (/servi/.test(t)){ botSay(M.servicos, 500); return; }
+    if (/cota|orçament|orcament|preç|prec|custa|valor|quanto/.test(t)){ iniciarCotacao(); return; }
+    if (/contact|e-?mail|telefon|número|numero|whatsapp|falar/.test(t)){ botSay(M.contactos, 500); return; }
+    if (/quem|empresa|kilaza|sobre/.test(t)){ botSay(M.empresa, 500); return; }
+    botSay(M.fallback, 500);
+  }
 
   function scrollBottom(){ msgs.scrollTop = msgs.scrollHeight; }
 
@@ -178,22 +255,13 @@
   }
 
   function reply(key, label){
-    var text = M[key] || M.fallback;
-    botSay(text, 550);
-    if (key === "cotacao") {
-      setTimeout(function(){
-        var d = addMsg(
-            '<a class="kbz-chip kbz-wa" style="text-decoration:none;display:inline-block" target="_blank" rel="noopener" href="'
-          + waLink("Olá! Gostaria de solicitar uma cotação.\n\n1. Nome da empresa: ________\n2. NIF da empresa: ________\n3. Morada da empresa: ________\n4. Email da empresa: ________\n5. Produto ou necessidades (ex.: Sudfloc, Hipoclorito, etc.): ________\n6. Quantidade: ________\n7. Local de entrega: ________")
-          + '">🟢 Abrir WhatsApp com o pedido pronto</a>', "bot");
-        d.style.maxWidth = "95%";
-      }, 750);
-    }
+    botSay(M[key] || M.fallback, 550);
   }
 
   function handle(key, label){
     msgs.innerHTML = "";
     addMsg(label, "user");
+    if (key === "cotacao"){ iniciarCotacao(); return; }
     reply(key, label);
   }
 
